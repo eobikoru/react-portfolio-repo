@@ -1,0 +1,49 @@
+.testimonials{
+    display: flex;
+    background-color: black;
+}
+.teright{
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+.teleft{
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    img{
+        width: 463px;
+    }
+}
+.terightwrapper{
+    width: 80%;
+
+}
+.teone{
+    margin-bottom: 34px;
+    font-size: 25px;
+}
+.tetwo{
+    margin-bottom: 23px;
+}
+.tethree{
+    margin-bottom: 34px;
+
+}
+.tefour{
+   button{
+    border: none;
+    outline: none;
+    color: white;
+    background-color: crimson;
+    width: 242px;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 14px;
+   }
+}
