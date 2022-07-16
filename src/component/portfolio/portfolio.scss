@@ -44,11 +44,18 @@
           position: relative;
           transition: all 0.5s ease;
           cursor: pointer;
+          a{
+            position: absolute;
+            font-size: 20px;
+            top: 75px;
+            left: 74px;
+            color: white;
+          }
           h3{
               position: absolute;
               font-size: 20px;
-              top: 65px;
-              left: 34px;
+              top: 45px;
+              left: 64px;
           }
           img{
               width: 100%;
@@ -62,6 +69,9 @@
                   opacity: 0.2;
 
               }
+              a{
+                color: white;
+            }
           }
       }
     }

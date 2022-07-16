@@ -1,50 +1,71 @@
-import React, { useState } from "react";
-import PortfolioList from "../portfoliolist/PortfolioList.JSX";
+import React, { useState, useEffect } from "react";
+import PortList from "../portlist/PortList";
 import "./portfolio.scss";
-import { portList } from "./portlist";
+
+import { featuredPort, webPort, designPort } from "../../data";
 
 function Portfolio() {
-  const [list, setList] = useState(portList);
+  const [selected, setSelected] = useState("featured");
+  const [data, setData] = useState([]);
+  const list = [
+    {
+      id: "featured",
+      title: "Featured",
+    },
+    {
+      id: "web",
+      title: "Web App",
+    },
+    {
+      id: "design",
+      title: "Design",
+    },
+  ];
+
+  useEffect(() => {
+    switch (selected) {
+      case "featured":
+        setData(featuredPort);
+        break;
+      case "web":
+        setData(webPort);
+        break;
+      case "design":
+        setData(designPort);
+        break;
+
+      default:
+        setData(designPort);
+    }
+  }, [selected]);
 
   return (
     <div className="portfolio" id="portfolio">
       <h1>Portfolio</h1>
       <ul>
-     
+        {list.map((item) => (
+          <PortList
+            id={item.id}
+            key={item.id}
+            title={item.title}
+            active={selected == item.id}
+            setSelected={setSelected}
+          />
+        ))}
       </ul>
+
       <div className="container">
-        <div className="items">
-          <img src="./assets/net.jpeg" alt="" />
-          <h3> Netflix App clone</h3>
-        </div>
-        <div className="items">
-          <img src="./assets/net.jpeg" alt="" />
-          <h3> Netflix App clone</h3>
-        </div>
-        <div className="items">
-          <img src="./assets/net.jpeg" alt="" />
-          <h3> Netflix App clone</h3>
-        </div>
-        <div className="items">
-          <img src="./assets/net.jpeg" alt="" />
-          <h3> Netflix App clone</h3>
-        </div>
-        <div className="items">
-          <img src="./assets/net.jpeg" alt="" />
-          <h3> Netflix App clone</h3>
-        </div>
-        <div className="items">
-          <img src="./assets/net.jpeg" alt="" />
-          <h3> Netflix App clone</h3>
-        </div>
-        <div className="items">
-          <img src="./assets/net.jpeg" alt="" />
-          <h3> Netflix App clone</h3>
-        </div>
-        <div className="items">
-          <img src="./assets/net.jpeg" alt="" />
-          <h3> Netflix App clone</h3>
-        </div>
+        {data.map((d) => (
+          <>
+         
+          <div className="items">
+            <img src={d.img}/>
+            <h3>{d.title}</h3>
+            <a href="">view site</a>
+          </div>
+         
+          </>
+        ))}
       </div>
     </div>
   );
