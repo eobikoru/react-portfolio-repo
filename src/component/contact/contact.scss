@@ -1,6 +1,9 @@
 .contact{
     background-color: white;
     display: flex;
+    @media (max-width:421px) {
+      flex-direction: column;
+       }
     .left{
         flex: 1;
         overflow: hidden;
@@ -16,6 +19,10 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        @media (max-width:421px) {
+            width: 100%;
+       height: auto;
+             }
    form{
        width: 70%;
        height: 70%;
@@ -23,15 +30,28 @@
        flex-direction: column;
        align-items: center;
      justify-content: space-around;
+     @media (max-width:421px) {
+        width: 90%;
+   
+         }
        input{
            width: 400px;
            height: 40px;
+           @media (max-width:421px) {
+            width: 90%;
+            margin-top: 12px;
+       
+             }
 
        }
        textarea{
            width: 400px;
            height: 200px;
            font-size: 14px;
+           @media (max-width:421px) {
+            width: 90%;
+            margin-top: 12px;
+             }
        }
        button{
            width: 400px;
@@ -44,9 +64,17 @@
            outline: none;
            border-radius: 7px;
            cursor: pointer;
+           @media (max-width:421px) {
+            width: 90%;
+            margin-top: 12px;
+             }
        }
        span{
            color: green;
+           @media (max-width:421px) {
+         font-size: 11px;
+            margin-top: 12px;
+             }
        }
    }
     }

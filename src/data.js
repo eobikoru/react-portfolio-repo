@@ -49,12 +49,7 @@ export const webPort = [
         img: "",
         link: ""
     },
-    {
-        id:1 ,
-        title: "Neflix clone",
-        img: "",
-        link: ""
-    },
+
   
 ] 
 export const designPort = [
