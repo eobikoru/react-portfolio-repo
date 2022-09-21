@@ -61,7 +61,7 @@ function Portfolio() {
           <div className="items">
             <img src={d.img}/>
             <h3>{d.title}</h3>
-            <a href="">view site</a>
+            <a href={d.link}  target="_blank">view site</a>
           </div>
          
           </>
